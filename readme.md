@@ -3,7 +3,7 @@
 This repository contains various projects and tasks related to Embedded Systems programming using the C language. The examples and tasks are compiled and run using the GCC (GNU Compiler Collection) compiler.
 
 ## Table of Contents
-- [Embedded Systems C Programming](#embedded-systems-c-programming)
+- [C-Language and Embedded Systems C Programming](#embedded-systems-c-programming)
   - [Table of Contents](#table-of-contents)
   - [Project Description](#project-description)
   - [Prerequisites](#prerequisites)
@@ -12,7 +12,7 @@ This repository contains various projects and tasks related to Embedded Systems 
     - [macOS:](#macos)
 
 ## Project Description
-This repository contains exercises and projects focused on Embedded Systems programming using C. Each task is stored in its respective folder, and the programs can be compiled and executed using the GCC compiler.
+This repository contains exercises and projects focused on Embedded Systems programming using C Language. Each task is stored in its respective folder, and the programs can be compiled and executed using the GCC compiler.
 
 ## Prerequisites
 Before you can compile and run the C programs in this repository, make sure you have the following:
