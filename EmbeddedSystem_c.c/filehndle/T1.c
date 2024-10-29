@@ -14,7 +14,7 @@ int main(void)
     // 2. Operate
     printf("Program starting.\n");
     printf("Insert filename: ");
-    fgets(filename, FILENAME_LEN, stdin);
+    fgets(filename, FILENAME_LEN, stdin); //-1 for new line and -1 for null terminator
     filename[strcspn(filename, "\n")] = '\0';
     printf("Enter text (max %d): ", CONTENT_LEN - 1);
     fgets(content, CONTENT_LEN, stdin);
@@ -30,7 +30,7 @@ int main(void)
     //    return 1;
     //}
 
-    fprintf(filehandle, "%s", content);
+    fprintf(filehandle, "%s\n", content);
     //printf("Filename is %s\n", filename);
 
     // 3. Cleanup
