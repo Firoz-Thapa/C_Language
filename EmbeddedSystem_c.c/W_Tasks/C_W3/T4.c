@@ -1,20 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 void showCount(int count) {
-    printf("Current count - %d\n", count);
+    printf("Current count - %d\n\n", count);  
 }
 
 void increaseCount(int *count) {
     (*count)++;
+    printf("Count increased!\n\n");  
 }
 
 void resetCount(int *count) {
     *count = 0;
+    printf("Cleared count!\n\n");  
 }
 
 int main() {
     int count = 0;
     int choice;
+    char input[50];  
 
     printf("Program starting.\n");
 
@@ -25,7 +31,13 @@ int main() {
         printf("3 - Reset count\n");
         printf("0 - Exit\n");
         printf("Your choice: ");
-        scanf("%d", &choice);
+        fgets(input, sizeof(input), stdin);  
+
+
+        if (sscanf(input, "%d", &choice) != 1) {
+            printf("Unknown option!\n\n");  
+            continue;
+        }
 
         switch (choice) {
             case 1:
@@ -38,10 +50,10 @@ int main() {
                 resetCount(&count);
                 break;
             case 0:
-                printf("Exiting program.\n");
+                printf("Exiting program.\n\n"); 
                 break;
             default:
-                printf("-1 - Unknown option\n");
+                printf("Unknown option!\n\n"); 
                 break;
         }
     } while (choice != 0);

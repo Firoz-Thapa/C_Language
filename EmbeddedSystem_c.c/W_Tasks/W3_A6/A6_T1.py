@@ -12,6 +12,7 @@ def main():
         print(f"Error: File '{filename}' not found.")
 
     print("Program ending.")
+    return None
 
 if __name__ == "__main__":
     main()

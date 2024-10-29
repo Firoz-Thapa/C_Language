@@ -49,7 +49,7 @@ int main() {
                 printf("Exiting program.\n\n");  
                 break;
             default:
-                printf("-1 - Unknown option\n\n");  
+                printf("Unknown option! Try again.\n\n");  
                 break;
         }
     } while (choice != 0);

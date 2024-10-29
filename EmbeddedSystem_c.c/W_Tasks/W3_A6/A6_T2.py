@@ -8,6 +8,7 @@ def main():
         file.write(f"{first_name}\n{last_name}")
 
     print("Program ending.")
+    return None
 
 if __name__ == "__main__":
     main()
