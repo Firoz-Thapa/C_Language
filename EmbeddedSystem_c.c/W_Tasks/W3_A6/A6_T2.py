@@ -5,7 +5,7 @@ def main():
     filename = input("Insert filename: ")
 
     with open(filename, 'w', encoding='utf-8') as file:
-        file.write(f"{first_name}\n{last_name}")
+        file.write(f"{first_name}\n{last_name}\n")
 
     print("Program ending.")
     return None
