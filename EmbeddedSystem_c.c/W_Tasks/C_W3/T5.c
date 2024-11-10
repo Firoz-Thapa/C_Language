@@ -20,11 +20,11 @@ int main() {
             break;
         }
 
-        word[strcspn(word, "\n")] = 0;  // Remove newline character
+        word[strcspn(word, "\n")] = 0;  
 
         if (strlen(word) > MAX_WORD_LENGTH) {
             printf("Word is too long! Max word length is %d.\n", MAX_WORD_LENGTH);
-            printf("Word was ignored. Try again.\n");  // Removed extra newline here
+            printf("Word was ignored. Try again.\n");  
             continue;
         }
 

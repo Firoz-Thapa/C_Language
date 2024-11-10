@@ -17,12 +17,12 @@ void resetCount(int *count) {
     printf("Cleared count!\n\n");  
 }
 
-// Helper function to check if input is a valid integer
+
 int isValidInteger(char *input) {
     char *end;
-    strtol(input, &end, 10);  // Try to convert to integer
+    strtol(input, &end, 10); 
 
-    // Check if entire input was valid integer (no trailing chars)
+
     return *end == '\n' || *end == '\0';  
 }
 
@@ -42,13 +42,13 @@ int main() {
         printf("Your choice: ");
         fgets(input, sizeof(input), stdin);  
 
-        // Validate if input is an integer
+    
         if (!isValidInteger(input) || sscanf(input, "%d", &choice) != 1) {
             printf("Unknown option!\n\n");  
             continue;
         }
 
-        // Process valid integer options
+
         switch (choice) {
             case 1:
                 showCount(count);
