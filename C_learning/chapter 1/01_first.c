@@ -5,3 +5,8 @@ int main(){
     
     return 0;
 }
+
+
+
+//gcc
+// ./a.exe

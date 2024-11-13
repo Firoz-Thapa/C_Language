@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
 #include "input.h"
 #include "ask_choice.h"
 
