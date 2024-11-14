@@ -1,4 +1,5 @@
 def string_analytics():
+    """Analyzes a list of names from a file and provides statistical information."""
     print("Program starting.")
     print("This program analyses a list of names from a file.")
     filename = input("Insert filename to read: ")
@@ -6,10 +7,10 @@ def string_analytics():
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             print(f"Reading names from \"{filename}\".")
-            names = file.read().split(';')
-            names = [name.strip() for name in names if name.strip()]  # Remove empty lines or extra spaces
+            content = file.read().replace('\n', ';')  
+            names = [name.strip() for name in content.split(';') if name.strip()]  
             print("Analysing names...")
-            
+
             if names:
                 name_count = len(names)
                 shortest_name = min(names, key=len)
@@ -30,5 +31,12 @@ def string_analytics():
 
     print("Program ending.")
 
-if __name__ == "__main__":
+
+def main() -> None:
+    """Main function to initiate the string analytics process."""
     string_analytics()
+    return None 
+
+
+if __name__ == "__main__":
+    main()
