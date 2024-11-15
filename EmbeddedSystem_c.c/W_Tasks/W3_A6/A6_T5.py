@@ -1,4 +1,5 @@
 def number_analytics():
+
     print("Program starting.")
     filename = input("Insert filename: ")
 
@@ -15,11 +16,18 @@ def number_analytics():
             print(f"File \"{filename}\" results:")
             print("Count;Sum;Greatest;Average")
             print(f"{count};{total_sum};{greatest};{average:.2f}")
+            print()
             print("#### Number analysis - END ####")
     except FileNotFoundError:
         print(f"File {filename} not found.")
 
     print("Program ending.")
 
-if __name__ == "__main__":
+
+def main() -> None:
     number_analytics()
+    return None
+
+
+if __name__ == "__main__":
+    main()

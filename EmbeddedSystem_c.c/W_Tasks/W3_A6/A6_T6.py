@@ -9,13 +9,14 @@ def rot13_cipher(text):
             result.append(char)
     return ''.join(result)
 
+
 def cipher_messages():
     print("Program starting.")
-    print("Collecting plain text rows for ciphering.")
+    print("\nCollecting plain text rows for ciphering.")
     
     rows = []
     while True:
-        row = input("Insert row (empty stops): ")
+        row = input("Insert row(empty stops): ")
         if not row:
             break
         rows.append(row)
@@ -25,16 +26,26 @@ def cipher_messages():
     print("\n#### Ciphered text ####")
     for row in ciphered_rows:
         print(row)
-    
-    save_choice = input("\nWould you like to save the ciphered text to a file? (y/n): ").lower()
-    if save_choice == 'y':
-        filename = input("Insert filename to save: ")
-        with open(filename, 'w', encoding='utf-8') as file:
-            for row in ciphered_rows:
-                file.write(row + '\n')
-        print("Ciphered text saved!")
-    
+
+    print("\n#### Ciphered text ####") 
+
+    save_choice = input("Insert filename to save: ")
+    if save_choice.strip():
+        try:
+            with open(save_choice, 'w', encoding='utf-8') as file:
+                for row in ciphered_rows:
+                    file.write(row + '\n')
+            print("Ciphered text saved!")
+        except Exception as e:
+            print(f"An error occurred while saving: {e}")
+    else:
+        print("File name not defined.\nAborting save operation.")
+
     print("Program ending.")
 
-if __name__ == "__main__":
+
+def main() -> None:  
     cipher_messages()
+    return None
+if __name__ == "__main__":
+    main()

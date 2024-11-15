@@ -1,5 +1,5 @@
 def string_analytics():
-    """Analyzes a list of names from a file and provides statistical information."""
+
     print("Program starting.")
     print("This program analyses a list of names from a file.")
     filename = input("Insert filename to read: ")
@@ -33,9 +33,9 @@ def string_analytics():
 
 
 def main() -> None:
-    """Main function to initiate the string analytics process."""
+
     string_analytics()
-    return None 
+    return None
 
 
 if __name__ == "__main__":
