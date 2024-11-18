@@ -21,11 +21,9 @@ def main():
     """Main function to initiate the file copying process."""
     print("Program starting.")
     print("This program can copy a file.")
-    
     src_filename = input("Insert source filename: ")
     dest_filename = input("Insert destination filename: ")
     copy_file(src_filename, dest_filename)
-    
     print("Program ending.")
     return None
 if __name__ == "__main__":

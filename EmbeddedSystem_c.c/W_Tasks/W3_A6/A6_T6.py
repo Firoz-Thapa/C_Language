@@ -13,7 +13,6 @@ def rot13_cipher(text):
 def cipher_messages():
     print("Program starting.")
     print("\nCollecting plain text rows for ciphering.")
-    
     rows = []
     while True:
         row = input("Insert row(empty stops): ")
@@ -27,7 +26,7 @@ def cipher_messages():
     for row in ciphered_rows:
         print(row)
 
-    print("\n#### Ciphered text ####") 
+    print("\n#### Ciphered text ####")
 
     save_choice = input("Insert filename to save: ")
     if save_choice.strip():
@@ -44,7 +43,7 @@ def cipher_messages():
     print("Program ending.")
 
 
-def main() -> None:  
+def main() -> None:
     cipher_messages()
     return None
 if __name__ == "__main__":

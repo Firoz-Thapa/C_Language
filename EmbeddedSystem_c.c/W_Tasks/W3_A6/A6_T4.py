@@ -7,16 +7,15 @@ def string_analytics():
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             print(f"Reading names from \"{filename}\".")
-            content = file.read().replace('\n', ';')  
-            names = [name.strip() for name in content.split(';') if name.strip()]  
+            content = file.read().replace('\n', ';')
+            names = [name.strip() for name in content.split(';') if name.strip()]
             print("Analysing names...")
 
             if names:
                 name_count = len(names)
                 shortest_name = min(names, key=len)
                 longest_name = max(names, key=len)
-                avg_length = sum(len(name) for name in names) / name_count
-                
+                avg_length = sum(len(name) for name in names) / name_count                
                 print("Analysis complete!")
                 print("#### REPORT BEGIN ####")
                 print(f"Name count - {name_count}")

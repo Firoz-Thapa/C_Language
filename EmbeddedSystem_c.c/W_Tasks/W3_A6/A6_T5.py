@@ -5,13 +5,11 @@ def number_analytics():
 
     try:
         with open(filename, 'r', encoding='utf-8') as file:
-            numbers = [int(line.strip()) for line in file.readlines()]
-            
+            numbers = [int(line.strip()) for line in file.readlines()]            
             count = len(numbers)
             total_sum = sum(numbers)
             greatest = max(numbers)
             average = total_sum / count
-            
             print("#### Number analysis - START ####")
             print(f"File \"{filename}\" results:")
             print("Count;Sum;Greatest;Average")
