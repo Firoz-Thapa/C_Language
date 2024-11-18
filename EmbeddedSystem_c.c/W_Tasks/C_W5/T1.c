@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "T1.h"
 
 int main(void)
