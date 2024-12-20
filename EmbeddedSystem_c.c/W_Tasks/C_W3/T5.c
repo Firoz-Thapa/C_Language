@@ -12,6 +12,7 @@ int main() {
     printf("Program starting.\n");
 
     while (1) {
+        // Removed the space between "word" and "(empty stops)"
         printf("Insert word(empty stops): ");
         fgets(word, sizeof(word), stdin);
 

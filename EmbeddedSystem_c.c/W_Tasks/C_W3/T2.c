@@ -1,13 +1,14 @@
 #include <stdio.h>
 
-void calculateArea(float width, float height) {
-    float area = width * height;
+// Function to compute and display the area of a rectangle
+void computeArea(float width, float height) {
+    float area = width * height;  // Calculate the area
     printf("\n");
-    printf("Area is %.2f²\n", area);
+    printf("Area is %.2f²\n", area);  // Display the area
 }
 
 int main() {
-    float width, height;
+    float width, height;  // Variables for width and height
 
     printf("Program starting.\n");
     printf("Insert width: ");
@@ -15,7 +16,7 @@ int main() {
     printf("Insert height: ");
     scanf("%f", &height);
 
-    calculateArea(width, height);
+    computeArea(width, height);  // Call the function to compute the area
 
     printf("Program ending.\n");
     return 0;

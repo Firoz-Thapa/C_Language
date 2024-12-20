@@ -1,32 +1,36 @@
 #include <stdio.h>
 #include <string.h>
 
-void insertWord(char *word) {
+// Function to input a word from the user
+void inputWord(char *word) {
     printf("Insert word: ");
     scanf("%s", word);
     printf("\n");
 }
 
-void showWord(char *word) {
-    printf("Current word - \"%s\"\n\n", word);  
+// Function to display the current word
+void displayWord(char *word) {
+    printf("Current word - \"%s\"\n\n", word);
 }
 
-void showWordReverse(char *word) {
-    int len = strlen(word);
+// Function to display the word in reverse
+void displayWordReverse(char *word) {
+    int len = strlen(word);  // Get the length of the word
     printf("Word reversed - \"");
     for (int i = len - 1; i >= 0; i--) {
         putchar(word[i]);
     }
-    printf("\"\n\n"); 
+    printf("\"\n\n");
 }
 
 int main() {
-    char word[100] = "";
-    int choice;
+    char word[100] = "";  // Buffer to store the word
+    int choice;           // Variable for user choice
 
     printf("Program starting.\n");
 
     do {
+        // Display menu options
         printf("Options:\n");
         printf("1 - Insert word\n");
         printf("2 - Show current word\n");
@@ -35,21 +39,22 @@ int main() {
         printf("Your choice: ");
         scanf("%d", &choice);
 
+        // Handle user choice
         switch (choice) {
             case 1:
-                insertWord(word);
+                inputWord(word);
                 break;
             case 2:
-                showWord(word);
+                displayWord(word);
                 break;
             case 3:
-                showWordReverse(word);
+                displayWordReverse(word);
                 break;
             case 0:
-                printf("Exiting program.\n\n");  
+                printf("Exiting program.\n\n");
                 break;
             default:
-                printf("Unknown option! Try again.\n\n");  
+                printf("Unknown option! Try again.\n\n");
                 break;
         }
     } while (choice != 0);

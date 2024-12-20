@@ -3,41 +3,39 @@
 #include <string.h>
 #include <ctype.h>
 
-void showCount(int count)
-{
+// Function to display the current count
+void displayCount(int count) {
     printf("Current count - %d\n\n", count);
 }
 
-void increaseCount(int *count)
-{
+// Function to increment the count
+void incrementCount(int *count) {
     (*count)++;
     printf("Count increased!\n\n");
 }
 
-void resetCount(int *count)
-{
+// Function to reset the count to zero
+void clearCount(int *count) {
     *count = 0;
     printf("Cleared count!\n\n");
 }
 
-int isValidInteger(char *input)
-{
+// Function to validate if the input is an integer
+int isValidInteger(char *input) {
     char *end;
     strtol(input, &end, 10);
-
     return *end == '\n' || *end == '\0';
 }
 
-int main()
-{
-    int count = 0;
-    int choice;
-    char input[50];
+int main() {
+    int count = 0;       // Counter variable
+    int choice;          // User choice
+    char input[50];      // Buffer for input
 
     printf("Program starting.\n");
 
-    do
-    {
+    do {
+        // Display menu options
         printf("Options:\n");
         printf("1 - Show count\n");
         printf("2 - Increase count\n");
@@ -46,29 +44,28 @@ int main()
         printf("Your choice: ");
         fgets(input, sizeof(input), stdin);
 
-        if (!isValidInteger(input) || sscanf(input, "%d", &choice) != 1)
-        {
+        if (!isValidInteger(input) || sscanf(input, "%d", &choice) != 1) {
             printf("Unknown option!\n\n");
             continue;
         }
 
-        switch (choice)
-        {
-        case 1:
-            showCount(count);
-            break;
-        case 2:
-            increaseCount(&count);
-            break;
-        case 3:
-            resetCount(&count);
-            break;
-        case 0:
-            printf("Exiting program.\n\n");
-            break;
-        default:
-            printf("Unknown option!\n\n");
-            break;
+        // Perform action based on user choice
+        switch (choice) {
+            case 1:
+                displayCount(count);
+                break;
+            case 2:
+                incrementCount(&count);
+                break;
+            case 3:
+                clearCount(&count);
+                break;
+            case 0:
+                printf("Exiting program.\n\n");
+                break;
+            default:
+                printf("Unknown option!\n\n");
+                break;
         }
     } while (choice != 0);
 

@@ -1,4 +1,8 @@
-def rot13_cipher(text):
+def apply_rot13_cipher(text):
+    """
+    Apply ROT13 cipher to the given text.
+    Rotates each letter by 13 positions in the alphabet.
+    """
     result = []
     for char in text:
         if 'a' <= char <= 'z':
@@ -9,10 +13,14 @@ def rot13_cipher(text):
             result.append(char)
     return ''.join(result)
 
-
-def cipher_messages():
+def collect_and_cipher_messages():
+    """
+    Collect rows of plain text, apply ROT13 cipher to each row, and save the result to a file.
+    """
     print("Program starting.")
     print("\nCollecting plain text rows for ciphering.")
+    
+    # Collect rows of text from the user until an empty row is entered
     rows = []
     while True:
         row = input("Insert row(empty stops): ")
@@ -20,14 +28,16 @@ def cipher_messages():
             break
         rows.append(row)
 
-    ciphered_rows = [rot13_cipher(row) for row in rows]
+    # Apply ROT13 cipher to each row
+    ciphered_rows = [apply_rot13_cipher(row) for row in rows]
 
+    # Display the ciphered text
     print("\n#### Ciphered text ####")
     for row in ciphered_rows:
         print(row)
-
     print("\n#### Ciphered text ####")
 
+    # Prompt the user to save the ciphered text to a file
     save_choice = input("Insert filename to save: ")
     if save_choice.strip():
         try:
@@ -42,9 +52,10 @@ def cipher_messages():
 
     print("Program ending.")
 
-
-def main() -> None:
-    cipher_messages()
+def start_ciphering_program():
+    """Main function to start the ciphering program."""
+    collect_and_cipher_messages()
     return None
+
 if __name__ == "__main__":
-    main()
+    start_ciphering_program()

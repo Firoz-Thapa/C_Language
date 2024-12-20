@@ -1,53 +1,68 @@
 #include <stdio.h>
 
 int main() {
-    int value;
-    int choice;
+    int number;    // Stores the user's input integer
+    int option;    // Stores the user's menu choice
 
     printf("Program starting.\n");
     printf("Testing decision structures.\n");
+
+    // Prompt the user to enter an integer
     printf("Insert an integer: ");
-    scanf("%d", &value);
+    scanf("%d", &number);
 
-    printf("Options:\n1 - In one multi-branched decision\n2 - In multiple independent if-statements\n0 - Exit\n");
+    // Display menu options
+    printf("Options:\n");
+    printf("1 - In one multi-branched decision\n");
+    printf("2 - In multiple independent if-statements\n");
+    printf("0 - Exit\n");
     printf("Your choice: ");
-    scanf("%d", &choice);
+    scanf("%d", &option);
 
-    switch (choice) {
+    // Process user's choice using a switch statement
+    switch (option) {
         case 1: {
             printf("Using one multi-branched decision structure.\n");
-            if (value >= 400) {
-                value += 44;
-            } else if (value >= 200) {
-                value += 22;
-            } else if (value >= 100) {
-                value += 11;
+            
+            // Multi-branched decision structure
+            if (number >= 400) {
+                number += 44;
+            } else if (number >= 200) {
+                number += 22;
+            } else if (number >= 100) {
+                number += 11;
             }
-            printf("Result is %d\n", value);
+            
+            printf("Result is %d\n", number);
             break;
         }
         case 2: {
-            // Adjusted this printf to match the expected output
             printf("Using multiple independent if-statements structure.\n");
-            if (value >= 400) {
-                value += 44;
+
+            // Multiple independent if-statements
+            if (number >= 400) {
+                number += 44;
             }
-            if (value >= 200) {
-                value += 22;
+            if (number >= 200) {
+                number += 22;
             }
-            if (value >= 100) {
-                value += 11;
+            if (number >= 100) {
+                number += 11;
             }
-            printf("Result is %d\n", value);
+
+            printf("Result is %d\n", number);
             break;
         }
         case 0:
+            // Exit option
             printf("Exiting...\n");
             break;
         default:
+            // Handle unknown options
             printf("Unknown option.\n");
     }
 
+    // Program termination message
     printf("\nProgram ending.\n"); 
     return 0;
 }
